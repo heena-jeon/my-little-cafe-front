@@ -1,23 +1,38 @@
 import {
-  Box,
+  Box, Toolbar, AppBar, Typography, IconButton,
 } from '@mui/material';
 import {
   ArrowBackIosNew,
   Menu,
 } from '@mui/icons-material';
 
-const Header = () => {
+const Header = ({ title, onClickBack }) => {
   return (
-    <Box style={{"display":"flex"}}>
-      <Box>
-        <ArrowBackIosNew />
-      </Box>
-      <Box style={{"width":"200px"}}>
-        <h3>주문하기</h3>
-      </Box>
-      <Box>
-        <Menu />
-      </Box>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton>
+            <ArrowBackIosNew />
+          </IconButton>
+          <Typography 
+            variant="h6" 
+            component="div" 
+            sx={{ flexGrow: 1 }}
+            align="center"
+          >
+            {title}
+          </Typography>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <Menu />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
     </Box>
   )
 };

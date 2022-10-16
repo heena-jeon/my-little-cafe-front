@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   BottomNavigation,
   BottomNavigationAction,
@@ -10,6 +10,7 @@ import {
   Coffee,
   MoreHoriz,
 } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -22,11 +23,41 @@ const NavBar = () => {
       }}
       showLabels
     >
-      <BottomNavigationAction label="Home" icon={<Home />} />
-      <BottomNavigationAction label="Pay" icon={<Payment />} />
-      <BottomNavigationAction label="Coffee" icon={<Coffee />} />
-      <BottomNavigationAction label="Order" icon={<ShoppingCart />} />
-      <BottomNavigationAction label="Other" icon={<MoreHoriz />} />
+      <BottomNavigationAction 
+        label="Home"
+        value="/"
+        icon={<Home />}
+        LinkComponent={Link}
+        to={'/'}
+      />
+      <BottomNavigationAction 
+        label="Pay"
+        value="payment"
+        icon={<Payment />}
+        LinkComponent={Link}
+        to={'/payment'}
+      />
+      <BottomNavigationAction
+        label="Coffee"
+        value="coffee"
+        icon={<Coffee />}
+        LinkComponent={Link}
+        to={'/coffee'}
+      />
+      <BottomNavigationAction
+        label="Order"
+        value="order"
+        icon={<ShoppingCart />}
+        LinkComponent={Link}
+        to={'/order'}
+      />
+      <BottomNavigationAction
+        label="Other"
+        value="other"
+        icon={<MoreHoriz />}
+        LinkComponent={Link}
+        to={'/other'}
+      />
     </BottomNavigation>
   )
 }

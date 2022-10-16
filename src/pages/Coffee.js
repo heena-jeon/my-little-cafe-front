@@ -1,5 +1,12 @@
+import CoffeeCard from '../features/coffee/CoffeeCard';
+import CoffeeCardList from '../features/coffee/CoffeeCardList';
+
 const Coffee = () => {
-  return <></>;
+  return (
+    <>
+      <CoffeeCardList />
+    </>
+  );
 };
 
 export default Coffee;
